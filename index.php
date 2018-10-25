@@ -2,6 +2,14 @@
 
  require_once(__DIR__ . '/config.php');
  require_once(__DIR__ . '/functions.php');
+ require_once(__DIR__ . '/Todo.php');
+
+ //get todos
+ $todoApp = new \MyApp\Todo();
+ $todos = $todoApp->getAll();
+ 
+ var_dump($todos);
+ exit;
 
 ?>
 
