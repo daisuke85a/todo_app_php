@@ -45,12 +45,12 @@ class Todo {
 	
 		$this->_db->beginTransaction();
 
-		$sql = sprintf("update todos set state = (state + 1 ) %d where id = %d",
+		$sql = sprintf("update todos set state = (state + 1 ) %% 2 where id = %d",
 		$_POST['id']);
 		$stmt = $this->_db->prepare($sql);
 		$stmt->execute(); 	
 	
-		$sql = sprintf("elect state from todos where id = %d where id = %d",
+		$sql = sprintf("select state from todos where id = %d",
 		$_POST['id']);
 		$stmt = $this->_db->query($sql);
 		$state = $stmt->fetchColumn();
