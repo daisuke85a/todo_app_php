@@ -25,7 +25,7 @@
 <body>
   <div id="container">
     <h1>Todos</h1>
-    <form action"">
+    <form action"" id="new_todo_form">
       <input type="text" id="new_todo" placeholder="What needs to be done?">
     </form>
     <ul id ="todos">
@@ -36,6 +36,12 @@
         <div class="delete_todo">x</div> 
       </li>
       <?php endforeach; ?>
+      <li id="todo_template" data-id=""> 
+        <input type="checkbox" class="update_todo">
+        <span class="todo_title"></span> 
+        <div class="delete_todo">x</div> 
+      </li> 
+    </ul>
   </div>
   <input type="hidden" id="token" value="<?= h($_SESSION['token']); ?>">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
